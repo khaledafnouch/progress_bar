@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+
+}
+.container{
+    text-align: center;
+   
+}
+.progrss-container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 300px;
+    position: relative;
+}
+.progrss-container::before{
+    content: '';
+    background-color: #e0e0e0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: -1;
+    
+}
+.progress{
+    background-color: aqua;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    transform: translateY(-50%);
+    width: 0%;
+    z-index: -1;
+    transition: 0.4s ease;
+
+}
+.circle{
+    background-color: #fff;
+    color: #999;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 3px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .4s ease;
+}
+.circle.active{
+    border-color: aqua;
+}
+.btn{
+    background-color: aqua;
+    cursor: pointer;
+    color: #fff;
+    border: 0;
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 10px;
+
+}
+.btn:active{
+    transform: scale(0.98);
+}
+.btn:focus{
+    outline: 0;
+}
+.btn:disabled{
+    background-color: #e0e0e0;
+    cursor:not-allowed;
+}
